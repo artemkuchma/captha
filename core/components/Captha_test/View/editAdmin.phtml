@@ -1,0 +1,33 @@
+
+<div>
+    <p>
+        <a href="/admin">Вернуться в админ панель</a>
+    </p>
+    <p>
+        <a href="/admin/captcha-admin">Вернуться в настройки параметров капчи</a>
+    </p>
+</div>
+<?php if($key == 'operators_level_1' || $key == 'operators_level_2' || $key == 'operators_level_3'):?>
+    <div>
+        <form method="post">
+            <label for="<?= $key ?>"><?= $text ?></label></br>
+            <input type="checkbox" id="<?= $key ?>" name="<?= $key ?>_1" value="+" /> + </br>
+            <input type="checkbox" id="<?= $key ?>" name="<?= $key ?>_2" value="-" /> - </br>
+            <input type="checkbox" id="<?= $key ?>" name="<?= $key ?>_3" value="*" /> * </br>
+            <input type="checkbox" id="<?= $key ?>" name="<?= $key ?>_4" value="/" /> / </br>
+            <input type="hidden"  name="key" value="<?= $key ?>" />
+            <input type="submit"/>
+        </form>
+    </div>
+
+    <?php else: ?>
+
+<div>
+    <form method="post">
+        <label for="<?= $key ?>"><?= $text ?></label>
+        <input type="number" id="<?= $key ?>" name="<?= $key ?>" value="<?= $value?>" />
+        <input type="hidden"  name="key" value="<?= $key ?>" />
+        <input type="submit"/>
+    </form>
+</div>
+<?php endif; ?>

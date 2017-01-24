@@ -1,0 +1,22 @@
+<p></p>
+<div>
+    <table border="1">
+        <?php foreach($config as $k=>$v): ?>
+        <tr>
+            <td><?= $v['text'] ?></td>
+            <?php if(is_array($v['value'])):?>
+                <td>
+              <?php  foreach($v['value'] as $val):
+                echo '"'.$val.'",  ';
+                 endforeach; ?>
+                </td>
+                <?php else: ?>
+                <td><?= $v['value'] ?></td>
+            <?php endif; ?>
+
+            <td><a href="/admin/edit-admin?key=<?= $k ?>&value=<?= is_array($v['value']) ? '' : $v['value'];  ?>&text=<?= $v['text'] ?>">Редактировать</a></td>
+        </tr>
+        <?php endforeach; ?>
+
+    </table>
+</div>

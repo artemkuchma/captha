@@ -1,0 +1,12 @@
+.equation{
+    text-align: center;
+}
+.transparent{
+	
+	background-image: url(/assets/components/Captha_test/images/default_image_1.php);
+	height: 30px;
+    width: 150px;
+}
+.test_test{
+	color: red;
+}

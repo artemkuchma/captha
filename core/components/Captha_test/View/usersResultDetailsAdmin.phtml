@@ -1,0 +1,45 @@
+
+
+<p>
+        <a href="/admin">Вернуться в админ панель</a>
+</p>
+<p>
+        <a href="/admin/users-result-admin">Вернуться к результатам всех пользователей</a>
+</p>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><i class="glyphicon glyphicon-edit"></i> Результат пользователя "<?= $user_name?>", (id = <?= $user_id ?>)</div>
+    <div class="panel-body">
+      <table class="table">
+    <thead>
+        <th>№</th>
+        <th>Дата,время</th>
+        <th>Уравнение</th>
+        <th>Результат</th>
+        <th>Уровень сложности</th>
+        <th>Стоимость</th>
+    </thead>
+    <tbody>
+        
+          <?php foreach($data as $k=>$v): 
+                $total = $total + $v['cost'];
+          ?>
+        <tr>
+        	<td><?= $k+1 ?></td>
+        	<th><?= $v['date'] ?></th>
+        	<th><?= $v['equation'] ?></th>
+        	<th><?= $v['result'] ?></th>
+        	<th><?= $v['level'] ?></th>
+        	<th><?= $v['cost'] ?></th> 
+        </tr>
+        <?php endforeach; ?>
+        <tr>
+        	<td colspan=5>Сумма</td>
+        	<td ><?= $total ?></td>
+        </tr>
+    </tbody>
+  </table>
+      
+    </div>
+  </div>
+</div>

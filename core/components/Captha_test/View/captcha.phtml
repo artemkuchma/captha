@@ -1,0 +1,26 @@
+
+<div id = 'time' ></div>
+<form method="post" enctype="multipart/form-data">
+    <!--  будет отправлять введенные пользователем данные скрипту go.php методом POST -->
+    <div class="equation" id="eq_div_<?= $level?>">
+        <a id="linck_<?= $level?>" href="javascript:void(0);" onclick="test(<?= Config::get("time_limit_{$level}")*1000 ?>, <?= $level?> ,<?= Config::get("time_limit_1")*1000 ?>,<?= Config::get("time_limit_2")*1000 ?>,<?= Config::get("time_limit_3")*1000 ?>)">Новая задачa</a>
+        <img src="/default_image_<?= $level ?>.php" class="transparen" id="capcha-image_<?= $level ?>">
+
+        <label for="solution_<?= $level ?>"> = </label>
+        <input type="number"  name="solution_<?= $level ?>" id="solution_<?= $level ?>" required  >
+        <input type="hidden" name="solution_time_<?= $level ?>" value="<?=time(); ?>"/>
+        
+        <input type="submit" name="go" value="Отправить решение">
+       
+        
+        <p><?= Session::getFlash(); ?></p>
+
+       
+     </div>
+
+</form>
+
+
+
+
+

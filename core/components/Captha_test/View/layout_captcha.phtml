@@ -1,0 +1,27 @@
+
+
+    
+   
+
+
+
+<?php global $modx_data; 
+ if($modx_data['is_member_admin_group'] || $modx_data['is_member_manager_group'] ):?>
+<div>
+    <p>
+        <a class="test" href="/admin">Админ панель</a>
+    </p>
+</div>
+<?php endif; ?>
+<div>
+    <?= $captcha_1 ?>
+</div>
+<div>
+    <?= $captcha_2 ?>
+</div>
+<div>
+    <?= $captcha_3 ?>
+</div>
+
+
+<script  type="text/javascript" src="/assets/components/Captha_test/js/captha.js"></script>

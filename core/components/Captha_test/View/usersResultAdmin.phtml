@@ -1,0 +1,33 @@
+<p>
+        <a href="/admin">Вернуться в админ панель</a>
+</p>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><i class="glyphicon glyphicon-edit"></i> Результаты пользователей</div>
+    <div class="panel-body">
+      <table class="table">
+    <thead>
+        <th>№</th>
+        <th>id пользователя</th>
+        <th>Имя пользователя</th>
+        <th>Сумма денег</th>
+        <th>Удалить результаты пльзователя</th>
+    </thead>
+    <tbody>
+        
+          <?php foreach($data as $k=>$v): ?>
+        <tr>
+        	<td><?= $k+1 ?></td>
+            <td><a href="/admin/user-result-details-admin?user_id=<?=$v['user_id'] ?>"><?= $v['user_id'] ?></a></td>
+            <td><?= $v['user_name'] ?></td>
+            <td><?= $v['total_many'] ?></td>
+            <td><a href="/admin/user-delete-admin?user_id=<?=$v['user_id'] ?>" onclick='return confirm("Вы действительно хотите удалить результаты пользователя <?=$v['user_name'] ?>")'>Удалить результаты</a></td>
+
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+  </table>
+      
+    </div>
+  </div>
+</div>
